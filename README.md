@@ -1,8 +1,8 @@
 #SCSS & Compass mixin for generating background-image gradients
 
-###[See example here](http://rawgithub.com/MarnuLombard/Buttons-Gradient-Mixin/blob/master/test.html)
+###[See example here](http://rawgithub.com/MarnuLombard/Buttons-Gradient-Mixin/master/test.html)
 
-(*Provided by rawgithub.com*)
+(Provided by rawgithub.com)
 
 ### Syntax
 
