@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/*-------------*\
+    STYLE.CSS
+\*-------------*/
+
+// Compass
+@import "compass/css3";
+
+// Styles
+
+@import "gradient"; 
+
+body {
+	box-sizing: border-box;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.text {
+	font-family: "Hevetica Neue", "Helvetica", "Arial", sans-serif;
+	text-align: center;
+		
+	&.import {
+		color: #333;
+	}
+	
+	&.h1{
+		color: #444;
+	}
+	&.h2{
+		color: #888;
+	}
+	
+}// text
+
+.examples {
+	padding: 3em 0;
+}
+
+.test-div {
+		@include border-radius(3px);
+		padding: 30px;
+		width: 20%;
+	    margin: 1% auto;
+	    
+	    &.a {
+		    @include gradient(#000);
+	    }
+	    
+	    &.b {
+		    @include gradient(#333);
+	    }
+	    
+	    &.c {
+		    @include gradient(#656565);
+	    }
+	    
+	    &.d {
+		    @include gradient(#999);
+	    }
+	    
+	    &.e {
+		    @include gradient(#ccc);
+	    }
+		&.f {
+		    @include gradient(#eee);
+	    }
+
+		&.g {
+		    @include gradient(#fff);
+	    }
+} // test-div
+
+.footer {
+	font-size: 12px;
+	color: #555;
+}

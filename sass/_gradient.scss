@@ -1,0 +1,80 @@
+$shadow-outside: 		0 2px 5px;
+$shadow-inside: 		inset 0 1px 0;
+
+@mixin gradient($color) {
+		
+	@if lightness($color) > 50% {
+		@include box-shadow( $shadow-outside #6b6b6b, $shadow-inside lighten($color, 20% ) );
+		border: 1px solid darken($color, 40%);
+	}
+	
+	@else if lightness($color) > 30% {
+		@include box-shadow( $shadow-outside #262626, $shadow-inside lighten($color, 40%) );
+		border: 1px solid black;
+	}
+	
+	@else {
+		@include box-shadow( $shadow-outside #262626, $shadow-inside lighten($color, 60%) );
+		border: 1px solid black;
+	}
+	// box-shadow & border
+
+	
+	@if lightness($color) < 10% {
+		@include background-image( 
+			linear-gradient( 
+				top, adjust-hue(lighten($color, 25%),4%), $color 
+			)
+		);
+	}
+	
+	@else if lightness($color) > 90%{		
+		@include background-image( 
+			linear-gradient( 
+				top, $color, darken($color, 10%) 
+			) 
+		);
+	}
+	
+	@else {		
+		@include background-image( 
+			linear-gradient( 
+				top, $color, darken($color, 25%) 
+			) 
+		);
+	}// gradient
+	
+	
+	&:active,
+	&:hover,
+	&:focus {		
+		@if lightness($color) > 90%{		
+			@include background-image( 
+				linear-gradient( 
+					top, darken($color, 5%), darken($color, 15%) 
+				) 
+			);
+		}
+		
+		@else {		
+			@include background-image( 
+				linear-gradient( 
+					top, darken($color, 10%), adjust-hue(darken($color, 40%), 4%)
+				)
+			);
+		}
+	}// a,h,f gradient  
+	
+			
+	&:active,
+	&:focus {
+		@if lightness($color) > 50% {
+			@include box-shadow( $shadow-outside #6b6b6b, inset 0 0 20px darken($color, 40% ) );
+		}
+	
+		@else {
+			@include box-shadow( $shadow-outside #262626,  inset 0 0 20px black );
+		}
+	}// a,f box-shadow
+		
+}
